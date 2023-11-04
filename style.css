@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.main {
+    background-image: linear-gradient(to right top, #051937, #003f64, #006770, #008c54, #7ea91b);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.to-do {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: auto;
+    margin: auto;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    padding: 40px 30px 40px;
+}
+
+.to-do h1 {
+    font-size: 2.1rem;
+
+    color: #fff;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 30px;
+
+}
+
+.to-do img {
+    margin: auto;
+    margin-left: 15px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.search input {
+    padding: 15px;
+    border: none;
+    outline: 0;
+    border-radius: 20px;
+    width: auto;
+    flex: 1;
+}
+
+.search button {
+    border: none;
+    outline: 0;
+    padding: 15px;
+    border-radius: 20px;
+    width: 90px;
+    position: absolute;
+    right: 0;
+    background-color: #008c54;
+    cursor: pointer;
+}
+
+.lists li {
+    list-style: none;
+    color: #fff;
+    margin-top: 1rem;
+    position: relative;
+    padding: 12px 8px 12px 50px;
+    font-size: 20px;
+    font-weight: 400;
+    user-select: none;
+}
+
+.lists li::before {
+    content: "";
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-image: url(images/unchecked.png);
+    background-position: center;
+    background-size: cover;
+    top: 12px;
+    left: 8px;
+}
+
+.lists li.checked {
+    color: #d1c3c3;
+    text-decoration: line-through;
+}
+
+.lists li.checked::before {
+    background-image: url(images/checked.png);
+}
+
+.lists li span {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 22px;
+    height: 40px;
+    cursor: pointer;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.lists li span:hover {
+    border-radius: 50%;
+    background-color: #008c54;
+}
+
+@media (max-width:470px) {
+    .to-do {
+        width: 80%;
+    }
+
+    .to-do h1 {
+        font-size: 1.5rem;
+    }
+
+    .to-do h1 img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .search button {
+        width: 60px
+    }
+
+    .lists li {
+        font-size: 1.2rem;
+    }
+
+    .lists li::before {
+        height: 20px;
+        width: 20px;
+    }
+    .search input{
+        padding: 13px;
+    }
+    .search button{
+        border: 2px solid transparent;
+        padding: 13px;
+    }
+}
